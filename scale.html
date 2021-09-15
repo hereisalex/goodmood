@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>goodmood | improve your mood</title>
+        <meta name="keywords" content="goodmood, good mood, bad mood, mood improvement, 
+        mood tracker, depression, bipolar, emotion tracker, emotion log"/>
+        <meta type="description" content="goodmood is designed to help you get in touch with your emotions 
+        and take control over your life by tracking your moods and offering simple mood improvement exercises"
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@665&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    </head>
+    <style>
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding:10px;
+
+        }
+        div.navbar li {
+            display: inline;
+            vertical-align: middle;
+            
+        }
+        /* div.navbar li a:hover {
+            background-color: #348aa7;
+        } */
+        div.navbar ul {
+            background-color:#3f3f3f;
+            box-shadow: 2px 5px 15px rgb(0, 0, 0) ;
+            height: 60px;
+        }
+        div.navbar li a {
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            
+        }
+        div.navbar {
+            margin-top: 0px;
+            height: 80px;
+        }
+
+        div.main {
+            font-family: 'Roboto', sans-serif ;
+            transition: margin-left .5s;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;         
+            margin: 0px;
+            transition: margin-left .5s;
+            background-color: rgb(128, 128, 190)
+            
+        }
+        .title {
+            text-align: center;
+            width: auto;
+            height: 80px;
+            margin-left: auto;
+            margin-right: auto;
+            color: rgb(224, 224, 224);
+            font-size: 25px;
+            background: linear-gradient(to bottom, #232526, #414345);
+            padding: 1px;
+            border-bottom-color:#232526;
+            border-bottom-style:solid;
+            border-bottom-width: 5px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            box-shadow: 2px 5px 30px black;
+        }
+        h1 {
+            margin-top: 10px;
+            font-family: "Helvetica Rounded"; 
+            font-size: 62px; 
+            font-style: normal; 
+            font-variant: normal; 
+            font-weight: 700; 
+            line-height: 23px;
+            margin-left: auto;
+            margin-right: auto;
+            width: fit-content;
+            color: white;
+            padding-left: 125px;
+            padding-top: 120px;
+            padding-bottom: 0%;
+            margin-bottom: 1px;
+            text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+
+        }
+        h2 {
+
+            color: white;
+            margin-left: auto;
+            margin-right: auto;
+            width: fit-content;
+            padding-left: 125px;
+            margin-top: 1px;
+            padding-bottom: 200px;
+        }
+
+
+        
+
+        input {
+            background: transparent;
+            color: white;
+            border: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.637);
+            padding: 10px;
+        }
+        legend {
+            font-size: 20px;
+            color: white;
+        }
+        fieldset {
+            color: white;
+            text-align: center;
+            border-style: none;
+            border-radius: 5px;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        form {
+
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+            padding-left: 125px;
+            color: white;
+        }   
+        .formButton {
+            font-size: 25px;
+            font-family: "Roboto", sans-serif;
+            border-style: none;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.24);
+
+            width: 150px; 
+            height: 60px;
+            float: right;
+        }
+
+        .formButton:hover {
+            background: rgba(255, 255, 255, 0.7);
+        }
+        .slidecontainer {
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 125px;
+        }
+
+        .slider {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 100px;
+            background:#d3d3d3;
+            outline: none;
+            opacity: 0.7;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+        }
+        .slider:hover {
+            opacity: 1;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 50px;
+            height: 150px;
+            background: #ffffff;
+            cursor: pointer;
+        
+        }
+
+        .sidenav {
+            height: 100%; /* 100% Full-height */
+            width: 0; /* 0 width - change this with JavaScript */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Stay on top */
+            top: 0; /* Stay at the top */
+            left: 0;
+            background-color: rgb(63, 63, 63); /* Black*/
+            overflow-x: hidden; /* Disable horizontal scroll */
+            padding-top: 60px; /* Place content 60px from the top */
+            transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+            box-shadow: inset -10px 0px 20px rgba(0, 0, 0, 0.603) ;
+        }
+
+        .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+         /* Position and style the close button (top right corner) */
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+
+
+        /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+        @media screen and (max-height: 450px) {
+            .sidenav {padding-top: 15px;}
+            .sidenav a {font-size: 18px;}
+        }   
+    </style>
+
+    <body>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="scale.html">mood scale</a>
+            <a href="chart.html">mood chart</a>
+            <a href="boost.html">mood boost</a>
+            <a href="history.html">mood history</a>
+            <a href="help.html">help</a>
+            <a href="contact.html">contact</a>
+            
+        </div>
+        <div id="main">
+            <div class="navbar">
+                <ul>
+                    <span onclick="openNav()"><li><img src="burgerbutton.png" alt="menu button" style="height: 40px;float:left;padding:10px;"></li></span>
+                    <li><a href="index.html">
+                        
+                            <img src= "logowhite.png" alt="goodmood logo" style="width:auto;height:60px;float: left;">
+                        
+                    </a></li>
+                    <li><a style="float: right;" href="signup.html">Sign Up</a></li>
+                    <li><a style="float: right;" href="login.html">Login</a></li>
+                </ul>
+            </div>
+
+        
+
+            <div class="main">
+                <h1>how are you feeling right now?</h1>
+                <h2></h2>
+            </div>
+
+            <div class="slidecontainer">
+                <input type="range" min="0" max="255" value="128" class="slider" id="moodRange">
+                <!-- <p>Value: <span id="demo"></span></p>    -->
+                <br><br><br><br><br><br>
+                <form action="chart.html">
+                    <input type="submit" class="formButton" value="Next">  
+                </form>
+            </div>
+            
+            <script>
+                function changeColor() {
+                    let green = document.getElementById('moodRange').value;
+                    let red = 255 - green;
+                    let color = 'rgb(' + red + ',' + green + ',190)';
+                    document.body.style.backgroundColor = color;
+                }
+
+                document.getElementById('moodRange').addEventListener('input',changeColor);
+            
+                /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
+                function openNav() {
+                    document.getElementById("mySidenav").style.width = "250px";
+                    document.getElementById("main").style.marginLeft = "250px";
+                }
+
+                /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+                function closeNav() {
+                    document.getElementById("mySidenav").style.width = "0";
+                    document.getElementById("main").style.marginLeft = "0";
+                }
+            </script>
+        </div>
+    </body>
+    
+</html>
